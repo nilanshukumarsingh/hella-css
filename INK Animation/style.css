@@ -1,0 +1,52 @@
+body{
+    margin: 0;
+    background-color: #000;
+    color: #fff;
+}
+
+.banner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+.banner .content .title{
+    font-family: 'Hallowed Grounds';
+    font-size: 6em;
+}
+
+.banner::before{
+    content : '';
+    position: absolute;
+    inset : 0;
+    background-image: url(images/bg.jpg);
+    background-size: cover; /* To fit the banner size */
+    background-position: center; 
+    z-index: -1; /* Current image is overlaping our text*/
+    
+    /* *INK desgin Level 1
+    Find -> Ink transparent */
+    
+    /* mask-image: url(images/ink_lv1.png); //When element is declared as mask image the system will automatically check and isolate the areas where the ink is transparent and those area will completely removed */
+    mask-image: url(images/ink_lv2.gif);
+    mask-size: cover; /*So it will be same as banner*/
+    mask-position: center;
+
+
+    /* INK desgin level 2
+        Creating an animation 
+            we will replace a normal ink image and mask image with an ink video movemont but that will be wrong. As video doesnt have transparent background (that rule of masking images is to remove areas where the ink has a transparent background and top of that masking images do not support) 
+
+            to find video -> ink video (https://www.vecteezy.com/)
+            than convert it into gif image ->  https://ezgif.com/  -> FPS should be highest
+            
+            So image we need its to be transparent background (More tools -> remove background) than (dont stack frames -> 10)
+            As gif image work infinitely we have to remove the loop
+            (Change loop count in more tools than loop count -> 1)
+    */
+
+    
+
+}
